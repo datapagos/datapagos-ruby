@@ -48,10 +48,14 @@ module DataPagos
     def self.parse_json_response(response)
       case response
         when Net::HTTPSuccess
-          JSON.parse(response.body)
+          if response.body
+            JSON.parse(response.body)
+          else
+            true
+          end
         else
           response.error!
       end
     end
-  
+
 end

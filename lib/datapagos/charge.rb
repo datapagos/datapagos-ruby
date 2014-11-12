@@ -11,5 +11,9 @@ module DataPagos
     def self.show(uid)
       DataPagos.get "/charges/#{uid}"
     end
+
+    def self.refund(uid)
+      DataPagos.post "/charges/#{uid}/refund"
+    end
   end
 end
