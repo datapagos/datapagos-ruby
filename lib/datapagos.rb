@@ -48,7 +48,7 @@ module DataPagos
     def self.parse_json_response(response)
       case response
         when Net::HTTPSuccess
-          if response.body then
+          if response.body && !response.body.strip.empty? then
             JSON.parse(response.body)
           else
             #TODO Make this more readable
