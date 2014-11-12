@@ -22,7 +22,7 @@ module DataPagos
       parse_json_response(response)
     end
 
-    def self.post(resource, body)
+    def self.post(resource, body = {})
       uri = URI.parse("#{base_url}#{resource}")
       http = get_http(uri)
 
@@ -48,9 +48,10 @@ module DataPagos
     def self.parse_json_response(response)
       case response
         when Net::HTTPSuccess
-          if response.body
+          if response.body then
             JSON.parse(response.body)
           else
+            #TODO Make this more readable
             true
           end
         else
