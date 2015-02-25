@@ -38,9 +38,8 @@ module DataPagos
 
     def self.get_http(uri)
       http = Net::HTTP.new(uri.host, uri.port)
-      if uri.scheme == 'https'
-        http.use_ssl = true
-      end
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      http.use_ssl = true
 
       return http
     end

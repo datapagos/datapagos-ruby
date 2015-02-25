@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'datapagos'
-  s.version     = '0.1.2'
+  s.version     = '0.1.3'
   s.date        = '2014-06-23'
   s.summary     = "DataPagos API client"
   s.description = "A client of the DataPagos API"
