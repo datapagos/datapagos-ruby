@@ -11,5 +11,9 @@ module DataPagos
     def self.show(uid)
       DataPagos.get "/subscriptions/#{uid}"
     end
+
+    def self.cancel(uid)
+      DataPagos.post "/subscriptions/#{uid}/cancel"
+    end
   end
 end

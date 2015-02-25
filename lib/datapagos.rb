@@ -4,7 +4,7 @@ require File.expand_path('datapagos/subscription.rb', File.dirname(__FILE__))
 
 # Ruby client of the DataPagos API
 module DataPagos
-  @base_url = 'https://datapagos.herokuapp.com/api/v1'
+  @base_url = 'https://datapagos.co/api/v1'
   class << self
     attr_accessor :base_url, :public_key, :secret_key
   end
